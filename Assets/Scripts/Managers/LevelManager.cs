@@ -85,6 +85,7 @@ public class LevelManager : MonoBehaviour
     private void SceneLoadFinishCallback(AsyncOperation operation)
     {
         _gameStateManager.SwitchToState(stateToChangeAfterSceneLoad);
+        loadingOperation.completed -= SceneLoadFinishCallback;
     }
 
     private void StartSceneLoad(string sceneName)

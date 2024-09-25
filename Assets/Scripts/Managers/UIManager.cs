@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
     public GameObject creditsMenuUI;
-
+    public GameObject loadingscreenUI;
 
     // Gameplay Specific UI Elements
     public Text LevelCount;
@@ -62,13 +62,17 @@ public class UIManager : MonoBehaviour
         optionsMenuUI.SetActive(true);
     }
 
-
     public void UICredits()
     {
         DisableAllUIPanels();
         creditsMenuUI.SetActive(true);
     }
 
+    public void LoadingScreenUI()
+    {
+        DisableAllUIPanels();
+        loadingscreenUI.SetActive(true);
+    }
 
     public void DisableAllUIPanels()
     {
@@ -78,6 +82,7 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         optionsMenuUI.SetActive(false);
         creditsMenuUI.SetActive(false);
+        loadingscreenUI.SetActive(false);
     }
 
     public void EnableAllUIPanels()
@@ -88,6 +93,7 @@ public class UIManager : MonoBehaviour
         pauseMenuUI.SetActive(true);
         optionsMenuUI.SetActive(true);
         creditsMenuUI.SetActive(false);
+        loadingscreenUI.SetActive(false);
     }
 
 

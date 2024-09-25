@@ -37,6 +37,7 @@ public class GameStateManager : MonoBehaviour
     public GameState_Options gameState_Options = new GameState_Options();
     public GameState_Credits gameState_Credits = new GameState_Credits();
     public GameState_Paused gameState_Paused = new GameState_Paused();
+    public GameState_Loading gameState_Loading = new GameState_Loading();
 
 
 

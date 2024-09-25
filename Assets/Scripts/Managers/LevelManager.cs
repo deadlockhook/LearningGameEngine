@@ -15,9 +15,11 @@ public class LevelManager : MonoBehaviour
     public PlayerManager _playerManager;
     public UIManager _uIManager;
 
-
+    
     public int nextScene;
 
+    private AsyncOperation loadingOperation;
+    private IGameState stateToChangeAfterSceneLoad;
 
     public void Awake()
     {
@@ -41,11 +43,54 @@ public class LevelManager : MonoBehaviour
         _gameStateManager.SwitchToState(_gameStateManager.gameState_GamePlay);       
     }
 
-
     public void LoadMainMenuScene()
     {
         LoadScene(0);
         _gameStateManager.SwitchToState(_gameStateManager.gameState_GameInit);
+    }
+
+    public void LoadSceneAsyncEx(string sceneName)
+    {
+        _gameStateManager.SwitchToState(_gameStateManager.gameState_Loading);
+
+        switch (sceneName)
+        {
+            case "MainMenu":
+                stateToChangeAfterSceneLoad = _gameStateManager.gameState_MainMenu;
+                break;
+
+            case "TestLevel":
+                stateToChangeAfterSceneLoad = _gameStateManager.gameState_GamePlay;
+                break;
+
+            default:
+                sceneName = "MainMenu";
+                stateToChangeAfterSceneLoad = _gameStateManager.gameState_MainMenu;
+                break;
+        }
+
+        StartSceneLoad(sceneName);
+    }
+
+    public bool IsLevelLoadFinished()
+    {
+        return loadingOperation.isDone;
+    }
+
+    public float GetLoadingProgress()
+    {
+        return loadingOperation.progress;
+    }
+
+    private void SceneLoadFinishCallback(AsyncOperation operation)
+    {
+        _gameStateManager.SwitchToState(stateToChangeAfterSceneLoad);
+    }
+
+    private void StartSceneLoad(string sceneName)
+    {
+        loadingOperation = SceneManager.LoadSceneAsync(name);
+        loadingOperation.completed += SceneLoadFinishCallback;
     }
 
     public void ReloadCurrentScene()

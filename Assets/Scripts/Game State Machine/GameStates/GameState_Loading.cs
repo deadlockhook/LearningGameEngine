@@ -11,7 +11,7 @@ public class GameState_Loading : IGameState
         Time.timeScale = 0f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        gameStateManager._uIManager.LoadingScreenUI();
+      //  gameStateManager._uIManager.LoadingScreenUI();
         gameStateManager._cameraManager.isCameraMoveEnabled = false;
     }
 

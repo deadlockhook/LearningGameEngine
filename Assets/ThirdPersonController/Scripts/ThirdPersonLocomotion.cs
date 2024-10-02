@@ -7,6 +7,7 @@ public class SimpleThirdPersonLocomotion : MonoBehaviour
     public float jumpForce = 5f;
     public Transform cameraTransform;
 
+
     private CharacterController controller;
     private float verticalVelocity;
     private bool isGrounded;
@@ -63,4 +64,6 @@ public class SimpleThirdPersonLocomotion : MonoBehaviour
             verticalVelocity = jumpForce;
         }
     }
+
+
 }

@@ -13,7 +13,7 @@ public class PlayerLocomotionHandler : MonoBehaviour
     [SerializeField] public bool isSprinting;
 
     [Header("Debug Output (read only)")]
-    [SerializeField] private float playerVelocity;
+    public float playerVelocity;
     [SerializeField] private bool playerIsGrounded;
 
     [Header("Movement Speeds")]

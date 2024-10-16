@@ -1349,10 +1349,22 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2384008851326326069}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2384008851326326070}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81c828b9ce7e07943ae1231c1c8c8b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1307054411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 725711720319384260, guid: e778663d324e19a48ab9d91fcd9af8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2384008851326326069}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85490debf802314b9604b0f3f34c174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1481364899 stripped
@@ -1668,6 +1680,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: TestLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 515732063566655833, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: isSprinting
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1172359046259678483, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
       propertyPath: m_IsActive
@@ -1962,6 +1979,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1920551938}
+    - targetCorrespondingSourceObject: {fileID: 7034935583075056663, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2384008851326326071}
     - targetCorrespondingSourceObject: {fileID: 5663269416064387049, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
       insertIndex: -1
@@ -1971,6 +1992,31 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 628490222}
   m_SourcePrefab: {fileID: 100100000, guid: e778663d324e19a48ab9d91fcd9af8f9, type: 3}
+--- !u!1 &2384008851326326070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7034935583075056663, guid: e778663d324e19a48ab9d91fcd9af8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2384008851326326069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2384008851326326071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2384008851326326070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d538ddc0136d14282eee13324413a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraManager: {fileID: 1307054411}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 119
+  cubeLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

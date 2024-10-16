@@ -1578,6 +1578,43 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1920551935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1625125363580622106, guid: e778663d324e19a48ab9d91fcd9af8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2384008851326326069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1920551938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920551935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 94f735a46ade3124cb22d488369f9bab,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &2384008851326326069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1921,6 +1958,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 559726084}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1625125363580622106, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1920551938}
     - targetCorrespondingSourceObject: {fileID: 5663269416064387049, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
       insertIndex: -1

@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // Sam Robichaud 
@@ -19,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     public InputManager _inputManager;
     public PlayerLocomotionHandler _playerLocomotionHandler;
 
-
+    public GameObject playerMesh;
 
     
 
@@ -51,6 +53,26 @@ public class PlayerManager : MonoBehaviour
         _playerLocomotionHandler.HandleAllPlayerMovement();
     }
 
+    private void FixedUpdate()
+    {
+
+        EularAngleMeme();
+    }
+
+    public void EularAngleMeme()
+    {
+        float timeInMs = Time.time * 1000.0f;
+
+        if (((int)timeInMs % 2) == 0)
+        {
+            Vector3 newEularAngles = playerMesh.transform.eulerAngles;
+            newEularAngles.z = Random.Range(-60, 60);
+            newEularAngles.y = Random.Range(-180, 180);
+
+
+            playerMesh.transform.eulerAngles = newEularAngles;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {

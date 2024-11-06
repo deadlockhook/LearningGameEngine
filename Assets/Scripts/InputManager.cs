@@ -27,27 +27,34 @@ public class InputManager : MonoBehaviour
 
     public bool isPauseKeyPressed = false;
 
+    public InteractionManager interactionManager;
+
     public PlayerInputActions playerControls;
     private InputAction actionMove;
     private InputAction actionLook;
     private InputAction actionJump;
     private InputAction actionSprint;
+    private InputAction actionFire;
     private void OnEnable() {
         playerControls = new PlayerInputActions();
+        interactionManager = FindObjectOfType<InteractionManager>();
         actionMove = playerControls.Player.Move;
         actionLook = playerControls.Player.Look;
         actionJump = playerControls.Player.Jump;
         actionSprint = playerControls.Player.Sprint;
+        actionFire = playerControls.Player.Fire;
         actionMove.Enable();
         actionLook.Enable();
         actionJump.Enable();
         actionSprint.Enable();
+        actionFire.Enable();
     }
     private void OnDisable() {
         actionMove.Disable();
         actionLook.Disable();
         actionJump.Disable();
         actionSprint.Disable();
+        actionFire.Disable();
     }
     public void HandleAllInputs()
     {
@@ -56,6 +63,7 @@ public class InputManager : MonoBehaviour
         HandleJumpInput();
         HandleCameraInput();
         HandlePauseKeyInput();
+        HandleInteractionInput();
     }
 
     private void HandleCameraInput()
@@ -98,6 +106,14 @@ public class InputManager : MonoBehaviour
         else
         {
             playerLocomotionHandler.isSprinting = false;
+        }
+    }
+
+    private void HandleInteractionInput()
+    {
+        if (actionFire.IsPressed() && interactionManager.interactionPossible)
+        {
+            interactionManager.Interact();
         }
     }
 

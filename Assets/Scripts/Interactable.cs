@@ -8,9 +8,17 @@ public class Interactable : MonoBehaviour
 
     public InteractionType type;
 
+    [SerializeField] private PickupScriptable pickupsScriptable;
     public void Activate()
     {
         Debug.Log(this.name + " was activated");
+
+    }
+
+    public void OnInteraction()
+    {
+        if (pickupsScriptable)
+        pickupsScriptable.DrawDebugInfo();
     }
     // Start is called before the first frame update
     void Start()

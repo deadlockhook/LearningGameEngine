@@ -32,13 +32,11 @@ public class InteractionManager : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "Interactable")
             {
-                Debug.Log("Looking at " + hit.transform.gameObject.name);
                 target = hit.transform.gameObject;
                 targetInteractable = target.GetComponent<Interactable>();
                 hitPosition = hit.point;
             }
-            else
-                Debug.Log("Looking at " + hit.transform.gameObject.name);
+
         }
         else
         {
@@ -66,6 +64,7 @@ public class InteractionManager : MonoBehaviour
             case Interactable.InteractionType.Pickup:
                 {
                     targetInteractable.gameObject.transform.position = hitPosition;
+                    targetInteractable.OnInteraction();
                     break;
                 }
             default:

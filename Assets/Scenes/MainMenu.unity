@@ -1843,6 +1843,12 @@ PrefabInstance:
       propertyPath: isSprinting
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 515732063566655833, guid: e778663d324e19a48ab9d91fcd9af8f9,
+        type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: b1948a12b462eae4bbb6c3e41c032c55,
+        type: 2}
     - target: {fileID: 616959208050697347, guid: e778663d324e19a48ab9d91fcd9af8f9,
         type: 3}
       propertyPath: m_IsActive

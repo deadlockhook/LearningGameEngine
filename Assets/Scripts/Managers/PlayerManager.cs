@@ -56,7 +56,7 @@ public class PlayerManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        EularAngleMeme();
+      //  EularAngleMeme();
     }
 
     public void EularAngleMeme()

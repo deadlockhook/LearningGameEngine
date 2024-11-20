@@ -19,8 +19,8 @@ public class LocalizedTextComponent : MonoBehaviour
         localizedStr = new LocalizedString { TableReference = tableReference, TableEntryReference = localizationKey };
 
         //just for testing
-        //var frenchLocale = LocalizationSettings.AvailableLocales.GetLocale("fr");
-        //LocalizationSettings.SelectedLocale = frenchLocale;
+        var frenchLocale = LocalizationSettings.AvailableLocales.GetLocale("fr");
+        LocalizationSettings.SelectedLocale = frenchLocale;
 
         LocalizationSettings.SelectedLocaleChanged += UpdateText;
         UpdateText(LocalizationSettings.SelectedLocale);

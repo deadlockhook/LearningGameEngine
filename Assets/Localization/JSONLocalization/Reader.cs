@@ -35,7 +35,25 @@ public class Reader : MonoBehaviour
     private void Start()
     {
         languageData = JsonUtility.FromJson<LanguageData>(jsonFile.text);
-        SetLanguage(currentLanguage);
+    }
+
+    public void OnLanguageChange(int newLanguage)
+    {
+        switch (newLanguage)
+        {
+            case 0:
+                {
+                    SetLanguage("en");
+                    break;
+                }
+            case 1:
+                {
+                    SetLanguage("fr");
+                    break;
+                }
+            default:
+                break;
+        }
     }
 
     public void SetLanguage(string newLanguage)
